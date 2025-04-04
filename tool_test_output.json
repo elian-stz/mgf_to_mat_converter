@@ -1,0 +1,23 @@
+{
+    "summary": {
+        "num_errors": 1,
+        "num_failures": 0,
+        "num_skips": 0,
+        "num_tests": 1
+    },
+    "tests": [
+        {
+            "data": {
+                "execution_problem": "Input staging problem: Traceback (most recent call last):\n  File \"/home/elian/Documents/converter/.venv/lib64/python3.13/site-packages/galaxy/tool_util/verify/interactor.py\", line 1434, in verify_tool\n    stage_data_in_history(\n    ~~~~~~~~~~~~~~~~~~~~~^\n        galaxy_interactor,\n        ^^^^^^^^^^^^^^^^^^\n    ...<6 lines>...\n        test_data_resolver=test_data_resolver,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/elian/Documents/converter/.venv/lib64/python3.13/site-packages/galaxy/tool_util/verify/interactor.py\", line 163, in stage_data_in_history\n    test_dict = galaxy_interactor.remote_to_input(\n        test_data=test_data, tool_id=tool_id, force_path_paste=force_path_paste, tool_version=tool_version\n    )\n  File \"/home/elian/Documents/converter/.venv/lib64/python3.13/site-packages/galaxy/tool_util/verify/interactor.py\", line 582, in remote_to_input\n    path_or_location = self._get_path_or_location(\n        fname,\n    ...<3 lines>...\n        mode=\"file\" if tool_input[\"class\"].lower() == \"file\" else \"directory\",\n    )\n  File \"/home/elian/Documents/converter/.venv/lib64/python3.13/site-packages/galaxy/tool_util/verify/interactor.py\", line 619, in _get_path_or_location\n    path = self.test_data_download(\n        tool_id, fname, is_output=False, tool_version=tool_version, mode=mode, path_only=True\n    )\n  File \"/home/elian/Documents/converter/.venv/lib64/python3.13/site-packages/galaxy/tool_util/verify/interactor.py\", line 525, in test_data_download\n    raise AssertionError(f\"Test input file ({filename}) cannot be found.\")\nAssertionError: Test input file (test-data/test.mgf) cannot be found.\n",
+                "status": "error",
+                "test_index": 0,
+                "time_seconds": 0.026201248168945312,
+                "tool_id": "mgf2mat",
+                "tool_version": "0.1.0+galaxy0"
+            },
+            "has_data": true,
+            "id": "mgf2mat-0"
+        }
+    ],
+    "version": "0.1"
+}

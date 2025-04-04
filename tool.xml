@@ -1,0 +1,32 @@
+<tool id="mgf2mat" name="Convert MGF to MAT format" version="0.1.0+galaxy0" python_template_version="3.5" profile="21.05">
+    <command detect_errors="exit_code"><![CDATA[
+    python3 '${__tool_directory__}/src/converter.py' -t ${mstype} -o ${output_file_name} ${input_file}
+    ]]></command>
+
+    <inputs>
+        <param name="mstype" type="select" optional="true" label="MS type" help="The type of MS">
+            <option value="MS1" selected="true">MS1</option>
+            <option value="MS2">MS2</option>
+        </param>
+        <param name="output_file_name" type="text" optional="true" label="Output file name" help="Output file name if absent, outputs to stdout"/>
+        <param name="input_file" type="data" format="mgf" optional="false" label="Input files" help="Input file(s) as MGF format"/>
+
+    </inputs>
+
+    <outputs>
+        <data name="output_file" format="txt" label="Converted data as MAT format"/>
+    </outputs>
+
+    <tests>
+        <test>
+            <param name="input_file_test" value="test-data/test.mgf"/>
+            <output name="output_file_test" file="test-data/test.mat"/>
+        </test>
+    </tests>
+
+    <help><![CDATA[
+    This tool allows to convert MGF to MAT data format, you can specify the MS type (default MS1)
+
+    Based on https://github.com/RECETOX/round2-task
+    ]]></help>
+</tool>
